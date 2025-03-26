@@ -1,10 +1,17 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
 body{
-    background: rgb(255,255,255);
-    background: linear-gradient(93deg, rgba(255,255,255,1) 0%, rgba(181,181,181,1) 0%, rgba(255,255,255,1) 82%);;
+    background-image: url(img//Untitled\ Project.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    flex-direction: column;
 }
 
 .login-container {
@@ -12,7 +19,8 @@ body{
     height: 400px;
     margin: 100px auto;
     padding: 20px;
-    background: white;
+    backdrop-filter: blur(3px);
+    border: 1px solid rgb(184, 184, 184);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -26,6 +34,7 @@ h2 {
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
+
 }
 
 form {
@@ -47,6 +56,47 @@ input {
     
 }
 
+
+h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.erro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.erro button{
+    width: 499px;
+}
+
+.erro img{
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.entro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.entro img{
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
 
 
 

@@ -3,15 +3,16 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+  "start": "nodemon app.js"
   },
   "author": "joao",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "ejs": "^3.1.10",
-    "express": "^4.21.2",
-    "expresss": "^0.0.0",
-    "nodemon": "^3.1.9"
-  }
+  "ejs": "^3.1.10",
+  "express": "^4.21.2",
+  "mysql2": "^3.14.0",
+  "nodemon": "^3.1.9"
+  },
+  "keywords": [],
+  "description": ""
 }

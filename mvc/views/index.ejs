@@ -11,23 +11,24 @@
     
     <div class="login-container">
         <h2>Login</h2>
-        <form action="/login" method="POST">
+        <form action="/login" method="post">
             <label for="username">Email:</label>
             <div class="input-group mb-3" style="width: 523px;">
-                <input type="text" class="form-control" placeholder="Insira seu Email" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                <input type="text" class="form-control" placeholder="Insira seu Email" aria-label="Example text with button addon" aria-describedby="button-addon1" name="usuario" id="usuario" >
               </div>
               
     
             <label for="password">Senha:</label>
             <div class="input-group mb-3" style="width: 523px;">
-                <input type="text" class="form-control" placeholder="Insira sua Senha" aria-label="Example text with button addon" aria-describedby="button-addon1">
-              </div>
+                <input type="text" class="form-control" placeholder="Insira sua Senha" aria-label="Example text with button addon" aria-describedby="button-addon1" name="senha" id="senha" >
+            </div>
               
 
             <br>
             <br>
 
-            <button type="button" class="btn btn-secondary">Entrar</button>
+
+            <button type="submit" class="btn btn-secondary">Entrar</button>
         </form>
     </div>
 
