@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gerenciar Usuásrio</title>
+    <script defer src="gerenciar.js"></script>
+    <link rel="shortcut icon" href="../img/img-dengue-logo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.1/dist/semantic.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/conta.css">
+  </head>
+  <body>
+    <div class="ui container">
+        <main>
+            <h1 class="ui header">Gerenciar Usuário</h1>
+            
+            <br>
+            <div class="lista">
+                <h2 class="ui header">Lista</h2>
+                <table class="ui celled table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbalimentar">
+                        <tr>
+                            <td>1</td>
+                            <td>João</td>
+                            <td>joao@gmail.com</td>
+                            <td>
+                                <button class="ui blue button" onclick="editRow(this)">Editar</button>
+                                <button class="ui red button" onclick="deleteRow(this)">Excluir</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>carrion</td>
+                            <td>carrion@gmail.com</td>
+                            <td>
+                                <button class="ui blue button" onclick="editRow(this)">Editar</button>
+                                <button class="ui red button" onclick="deleteRow(this)">Excluir</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="ui segment">
+                    <h2 class="ui header">Adicionar Usuário</h2>
+                    <div class="ui form">
+                        <div class="field">
+                            <input type="text" id="inputNome" placeholder="Nome do usuário">
+                        </div>
+                        <div class="field">
+                            <input type="text" id="inputEmail" placeholder="Email do usuário">
+                        </div>
+                        <button id="btnAdicionar" class="ui blue button" onclick="addRow()">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+
+    <script src="js/conta.js"></script>
+    <script src="https://kit.fontawesome.com/3861b94135.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.1/dist/semantic.min.js"></script>
+  </body>
+</html>

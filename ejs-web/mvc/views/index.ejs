@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Login</title>
+</head>
+<body>
+    
+    <div class="ui centered grid" style="height: 100vh; width: 523px; display: flex;
+    align-items: center; flex-direction: column; justify-content: center;">
+        <div class="column" style="max-width: 523px;">
+            <h2 class="ui centered header">Login</h2>
+            <form action="/login" method="post" class="ui form">
+                <!-- Campo Nome do Usuário -->
+                <div class="field">
+                    <label for="name">Nome do Usuário:</label>
+                    <div class="ui left icon input">
+                        <input type="text" placeholder="Insira seu Nome" name="usuario" id="usuario" required>
+                        <i class="user icon"></i>
+                    </div>
+                </div>
+                
+                <!-- Campo Email -->
+                <div class="field">
+                    <label for="username">Email:</label>
+                    <div class="ui left icon input">
+                        <input type="text" placeholder="Insira seu Email" name="email" id="email" required>
+                        <i class="envelope icon"></i>
+                    </div>
+                </div>
+                
+                <!-- Campo Senha -->
+                <div class="field">
+                    <label for="password">Senha:</label>
+                    <div class="ui left icon input">
+                        <input type="password" placeholder="Insira sua Senha" name="senha" id="senha" required>
+                        <i class="lock icon"></i>
+                    </div>
+                </div>
+                
+                <br>
+                <!-- Botão de Login -->
+                <button type="submit" class="ui fluid large grey submit button">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+</body>
+</html>
+

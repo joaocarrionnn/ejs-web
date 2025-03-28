@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column; 
+    background-image: url(img/istockphoto-1095286208-612x612.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    border: #000000 1px solid;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+.logo {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    color: #000000;
+}
+
+.logo img {
+    width: 60px; 
+    height: 60px;
+}
+
+.logo h2 {
+    font-size: 2em;
+    color: #ffffff;
+}
+
+.usuario {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+.usuario p {
+    color: #ffffff;
+    font-size: 1.2em;
+}
+
+.ui.container {
+    margin-top: 50px;
+    
+}
+
+.lista {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.ui.table th {
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.ui.table td {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .lista {
+        width: 100%;
+    }
+}

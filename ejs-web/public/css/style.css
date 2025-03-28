@@ -1,0 +1,86 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-image: url(img//Untitled\ Project.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.login-container {
+    width: 600px;
+    height: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    backdrop-filter: blur(3px);
+    border: 1px solid rgb(184, 184, 184);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+.erro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.erro button{
+    width: 499px;
+}
+
+.erro img{
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.entro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.entro img{
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2.ui.header {
+    font-size: 3.714286rem;
+}
+
+.ui.form .field>label {
+    display: block;
+    margin: 0 0 .28571429rem 0;
+    color: rgba(0, 0, 0, .87);
+    font-size: 1.2em;
+    font-weight: 700;
+    text-transform: none;
+}
+
+.ui.centered.grid{
+    gap: 20px;
+}
+
+.column{
+    max-width: 523px;
+}
