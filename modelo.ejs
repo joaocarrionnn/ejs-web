@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubo com Three.js e OrbitControls (usando importmap)</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+
+    <!-- Import Map -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@v0.175.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.175.0/examples/jsm/"
+          }
+    }
+    </script>
+</head>
+<body>
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+        import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+        const loader = new GLTFLoader();
+
+        // Cena, câmera e renderizador
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+
+        scene.fog = new THREE.Fog( 0xcccccc, 10, 15 );
+    
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1;
+
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        document.addEventListener("resize", (e) => {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            camera.aspect = canvas.clientWidth / canvas.clientHeight;
+            camera.updateProjectionMatrix();
+        })
+
+     
+
+        loader.load(
+            // resource URL
+            'models/porsche_gt3_rs.glb',
+            // called when the resource is loaded
+            function ( gltf ) {
+                scene.add( gltf.scene );
+
+                            // Luz spot para criar o feixe de luz
+                    let spotLight = new THREE.SpotLight(0xffffff, 100, 100, Math.PI / 6, 1, 2);
+                    spotLight.position.set(2.5, 5, 2.5); // Defina a posição da luz
+                    spotLight.target = gltf.scene; // Alvo da luz (aponta para o objeto carregado)
+
+                    spotLight.castShadow = true;
+                    spotLight.shadow.mapSize.width = 1024;
+                    spotLight.shadow.mapSize.height = 1024;
+                    spotLight.shadow.camera.near = 1;
+                    spotLight.shadow.camera.far = 10;
+                    spotLight.shadow.focus = 1;
+
+                    // Ajustes visuais para o feixe de luz
+                    spotLight.angle = Math.PI / 6; // Ângulo do feixe de luz
+                    spotLight.penumbra = 0.5; // Transição suave entre a luz intensa e a sombra
+                    spotLight.distance = 15; // Distância máxima do feixe de luz
+
+                    scene.add(spotLight);
+
+      
+            },
+            // called while loading is progressing
+            function ( xhr ) {
+
+                console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+
+            },
+            // called when loading has errors
+            function ( error ) {
+                console.log( 'An error happened' );
+            }
+        );
+
+        // Posição inicial da câmera
+        camera.position.z = 5;
+
+        // // Adicionando controles de órbita
+        const controls = new OrbitControls( camera, renderer.domElement );
+        controls.minDistance = 2;
+        controls.maxDistance = 10;
+        controls.maxPolarAngle = Math.PI / 2;
+        controls.target.set( 0, 1, 0 );
+        controls.update();
+
+
+        const light = new THREE.AmbientLight( 0x404040, 10 ); // soft white light
+        scene.add( light );
+
+        const ambient = new THREE.HemisphereLight( 0xffffff, 0x8d8d8d, 0.15 );
+        scene.add( ambient );
+
+        
+        const pointLight = new THREE.PointLight( 0xffffff, 5, 100 )
+        pointLight.position.set( 2.5, 5, 2.5 );
+        scene.add( pointLight );
+
+  
+
+        // Função de animação
+        function animate() {
+            requestAnimationFrame(animate);
+
+            controls.update();
+        
+            // Renderiza a cena
+            renderer.render(scene, camera);
+        }
+
+        animate();
+    </script>
+</body>
+</html>
